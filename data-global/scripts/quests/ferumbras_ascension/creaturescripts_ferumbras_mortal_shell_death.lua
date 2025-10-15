@@ -13,11 +13,10 @@ function ferumbrasMortalShell.onDeath(creature, corpse, lasthitkiller, mostdamag
 		return true
 	end
 
-	-- Verificar se o boss já existe na área
 	local spectators = Game.getSpectators(config.bossPos, false, false, 15, 15, 15, 15)
 	for _, spec in pairs(spectators) do
 		if spec:isMonster() and spec:getName():lower() == "ferumbras mortal shell" then
-			return true -- Boss já existe, não spawnar outro
+			return true
 		end
 	end
 
